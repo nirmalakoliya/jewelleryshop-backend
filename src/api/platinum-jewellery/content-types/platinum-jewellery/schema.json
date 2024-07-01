@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "platinum_jewelleries",
+  "info": {
+    "singularName": "platinum-jewellery",
+    "pluralName": "platinum-jewelleries",
+    "displayName": "Platinum Jewellery"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Heading4": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Heading4"
+    },
+    "bracelets": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::bracelet.bracelet",
+      "inversedBy": "platinum_jewelleries"
+    }
+  }
+}

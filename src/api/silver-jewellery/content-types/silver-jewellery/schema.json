@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "silver_jewelleries",
+  "info": {
+    "singularName": "silver-jewellery",
+    "pluralName": "silver-jewelleries",
+    "displayName": "Silver Jewellery"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Heading3": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Heading3"
+    },
+    "bracelets": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::bracelet.bracelet",
+      "inversedBy": "silver_jewelleries"
+    }
+  }
+}

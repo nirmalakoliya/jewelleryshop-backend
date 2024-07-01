@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "diamond_jewelleys",
+  "info": {
+    "singularName": "diamond-jewelley",
+    "pluralName": "diamond-jewelleys",
+    "displayName": "Diamond Jewelley"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Heading1": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Heading1"
+    },
+    "bracelets": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::bracelet.bracelet",
+      "inversedBy": "diamond_jewelleys"
+    }
+  }
+}

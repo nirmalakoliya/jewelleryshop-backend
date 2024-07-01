@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "gold_jewelleries",
+  "info": {
+    "singularName": "gold-jewellery",
+    "pluralName": "gold-jewelleries",
+    "displayName": "Gold Jewellery",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Heading": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Heading"
+    },
+    "bracelets": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::bracelet.bracelet",
+      "mappedBy": "gold_jewelleries"
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bracelets",
+  "info": {
+    "singularName": "bracelet",
+    "pluralName": "bracelets",
+    "displayName": "Bracelet",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading2": {
+      "type": "string"
+    },
+    "image2": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "name2": {
+      "type": "string",
+      "required": true
+    },
+    "price2": {
+      "type": "decimal"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name2"
+    },
+    "custom_jewellery": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::custom-jewellery.custom-jewellery",
+      "inversedBy": "bracelets"
+    },
+    "gold_jewelleries": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::gold-jewellery.gold-jewellery",
+      "inversedBy": "bracelets"
+    },
+    "diamond_jewelleys": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::diamond-jewelley.diamond-jewelley",
+      "mappedBy": "bracelets"
+    },
+    "silver_jewelleries": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::silver-jewellery.silver-jewellery",
+      "mappedBy": "bracelets"
+    },
+    "platinum_jewelleries": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::platinum-jewellery.platinum-jewellery",
+      "mappedBy": "bracelets"
+    }
+  }
+}

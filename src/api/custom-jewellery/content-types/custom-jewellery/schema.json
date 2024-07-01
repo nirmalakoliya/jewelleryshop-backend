@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "custom_jewelleries",
+  "info": {
+    "singularName": "custom-jewellery",
+    "pluralName": "custom-jewelleries",
+    "displayName": "CustomJewellery",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "description": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "bracelets": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::bracelet.bracelet",
+      "mappedBy": "custom_jewellery"
+    }
+  }
+}
